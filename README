@@ -1,0 +1,19 @@
+Compilation
+-----------
+
+Build-dependencies:
+  build-essential
+  libclutter-gst-3.0-dev
+  libglib2.0-dev
+  libnl-3-dev
+  libnl-route-3-dev
+  libgstreamer1.0-dev
+  libsoup2.4-dev
+  libclutter-gst-3.0-dev
+
+autoreconf -fi
+autoconf
+automake
+./configure
+make
+

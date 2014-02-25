@@ -1,0 +1,33 @@
+<node>
+  <interface name="org.tcmmd.ManagedConnections">
+
+    <method name="SetPolicy">
+      <arg direction="in" type="s" name="src_ip"/>
+      <arg direction="in" type="u" name="src_port"/>
+      <arg direction="in" type="s" name="dest_ip"/>
+      <arg direction="in" type="u" name="dest_port"/>
+
+      <arg direction="in" type="u" name="bitrate"/>
+      <arg direction="in" type="d" name="buffer_fill"/>
+    </method>
+
+    <method name="UnsetPolicy">
+    </method>
+
+    <property name="bitrate" type="u" access="read"/>
+    <property name="buffer_fill" type="d" access="read"/>
+
+    <!-- Test: not for use in real apps -->
+    <method name="SetFixedPolicy">
+      <arg direction="in" type="s" name="src_ip"/>
+      <arg direction="in" type="u" name="src_port"/>
+      <arg direction="in" type="s" name="dest_ip"/>
+      <arg direction="in" type="u" name="dest_port"/>
+
+      <arg direction="in" type="u" name="stream_rate"/>
+      <arg direction="in" type="u" name="background_rate"/>
+    </method>
+
+  </interface>
+</node>
+
