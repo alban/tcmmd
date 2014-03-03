@@ -20,6 +20,9 @@
 #ifndef __TCMMD_RTNL_H
 #define __TCMMD_RTNL_H
 
+#include <arpa/inet.h>
+#include <glib.h>
+
 void tcmmdrtnl_init (const char *link_name);
 void tcmmdrtnl_init_ifb (void);
 void tcmmdrtnl_uninit (void);

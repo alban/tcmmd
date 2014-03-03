@@ -17,6 +17,8 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
+#include "tcmmd_rtnl.h"
+
 #include <glib.h>
 
 #include <netlink/version.h>
@@ -173,6 +175,8 @@ tcmmrtnl_setup_ifb_redirection (void)
 #if 1
   gchar *cmd;
   int err;
+
+  tcmmdrtnl_del_rules ();
 
   cmd = g_strdup_printf ("tc qdisc del dev %s ingress > /dev/null 2>&1 || true",
                          rtnl_link_get_name (main_link));
@@ -388,16 +392,22 @@ tcmmdrtnl_del_rules (void)
 
   _del_rules ();
 
-  if ((err = nl_cache_refill(sock, qdisc_cache)))
+  if (qdisc_cache)
     {
-      g_printerr ("Error: cannot sync cache: %s\n", nl_geterror(err));
-      exit (1);
+      if ((err = nl_cache_refill(sock, qdisc_cache)))
+        {
+          g_printerr ("Error: cannot sync cache: %s\n", nl_geterror(err));
+          exit (1);
+        }
     }
 
-  if ((err = nl_cache_refill(sock, class_cache)))
+  if (class_cache)
     {
-      g_printerr ("Error: cannot sync cache: %s\n", nl_geterror(err));
-      exit (1);
+      if ((err = nl_cache_refill(sock, class_cache)))
+        {
+          g_printerr ("Error: cannot sync cache: %s\n", nl_geterror(err));
+          exit (1);
+        }
     }
 
   nl_cache_free (cls1_cache);
