@@ -1,6 +1,3 @@
-# Build-deps:
-#   libnl-route-3-dev
-
 bin_PROGRAMS = \
   tcmmd \
   tcdemo \
@@ -31,13 +28,8 @@ EXTRA_DIST = \
   gdbus-tcmmd.xml
   $(NULL)
 
-#AM_CFLAGS = \
-#  -g -Wall \
-#  -I$(top_srcdir) -I$(top_builddir) \
-#  $(NULL)
-
-tcmmd_CFLAGS = @TCMMD_CFLAGS@
-tcdemo_CFLAGS = @TCDEMO_CFLAGS@
+tcmmd_CFLAGS = @TCMMD_CFLAGS@ -Wall
+tcdemo_CFLAGS = @TCDEMO_CFLAGS@ -Wall
   
 tcmmd_LDADD = \
   @TCMMD_LIBS@ \
