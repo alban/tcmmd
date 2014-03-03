@@ -51,6 +51,7 @@ echo "Traffic control rules added. You can test it now."
 echo "Press <enter> to remove the traffic control rules."
 read i
 
+tc qdisc del dev ifb0 root
 tc qdisc del dev $MAIN_LINK ingress
 echo "Traffic control rules removed."
 
