@@ -36,8 +36,7 @@ void tcmmdrtnl_add_rules (in_addr_t *ip_src,
                           guint64 stream_rate,
                           guint64 background_rate);
 
-void tcmmdrtnl_print_stats (guint64 *qdisc_root_bytes,
-                            guint64 *qdisc_stream_bytes,
-                            guint64 *qdisc_background_bytes);
-
+void tcmmdrtnl_get_stats (guint64 *qdisc_root_bytes,
+                          guint64 *qdisc_stream_bytes,
+                          guint64 *qdisc_background_bytes);
 #endif

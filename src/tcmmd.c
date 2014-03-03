@@ -78,7 +78,7 @@ stats_cb (gpointer data)
   guint64 qdisc_background_bytes = 0;
 
   if (!file_stats)
-    return;
+    return FALSE;
 
   gettimeofday (&tv, NULL);
 
