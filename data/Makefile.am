@@ -7,4 +7,11 @@ systembusactivation_DATA = org.tcmmd.service
 modulesddir = $(sysconfdir)/modules-load.d
 modulesd_DATA = tcmmd.conf
 
+systemdsystemdir = $(prefix)/lib/systemd/system
+systemdsystem_DATA = tcmmd.service
+
+install-data-local:
+	install -d $(DESTDIR)$(systemdsystemdir)
+	ln -s tcmmd.service $(DESTDIR)$(systemdsystemdir)/dbus-org.tcmmd.service
+
 EXTRA_DIST = $(systembus_DATA) $(systembusactivation_DATA) $(modulesd_DATA)

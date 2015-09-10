@@ -1,0 +1,9 @@
+[Unit]
+Description=Traffic control multimedia daemon
+
+[Service]
+ExecStart=/usr/bin/tcmmd
+BusName=org.tcmmd
+
+[Install]
+Alias=dbus-org.tcmmd.service
