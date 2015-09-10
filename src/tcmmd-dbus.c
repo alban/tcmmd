@@ -89,8 +89,6 @@ handle_set_policy_cb (TcmmdManagedConnections *iface,
   g_signal_emit (self, signals[SET_POLICY], 0,
       src_ip, src_port, dest_ip, dest_port, bitrate, buffer_fill);
 
-  tcmmd_managed_connections_complete_set_policy (iface, invocation);
-
   return TRUE;
 }
 
@@ -115,8 +113,6 @@ handle_set_fixed_policy_cb (TcmmdManagedConnections *iface,
   g_signal_emit (self, signals[SET_FIXED_POLICY], 0,
       src_ip, src_port, dest_ip, dest_port, stream_rate, background_rate);
 
-  tcmmd_managed_connections_complete_set_fixed_policy (iface, invocation);
-
   return TRUE;
 }
 
@@ -136,8 +132,6 @@ handle_unset_policy_cb (TcmmdManagedConnections *iface,
     }
 
   g_signal_emit (self, signals[UNSET_POLICY], 0);
-
-  tcmmd_managed_connections_complete_unset_policy (iface, invocation);
 
   return TRUE;
 }

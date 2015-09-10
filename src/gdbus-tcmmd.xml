@@ -2,6 +2,8 @@
   <interface name="org.tcmmd.ManagedConnections">
 
     <method name="SetPolicy">
+      <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+
       <arg direction="in" type="s" name="src_ip"/>
       <arg direction="in" type="u" name="src_port"/>
       <arg direction="in" type="s" name="dest_ip"/>
@@ -12,6 +14,7 @@
     </method>
 
     <method name="UnsetPolicy">
+      <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
     </method>
 
     <property name="bitrate" type="u" access="read"/>
@@ -19,6 +22,8 @@
 
     <!-- Test: not for use in real apps -->
     <method name="SetFixedPolicy">
+      <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+
       <arg direction="in" type="s" name="src_ip"/>
       <arg direction="in" type="u" name="src_port"/>
       <arg direction="in" type="s" name="dest_ip"/>
