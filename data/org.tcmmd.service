@@ -9,3 +9,4 @@
 Name=org.tcmmd
 Exec=/usr/bin/tcmmd
 User=root
+SystemdService=dbus-org.tcmmd.service
