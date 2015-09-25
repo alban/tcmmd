@@ -14,4 +14,4 @@ install-data-local: tcmmd.service
 	install -d $(DESTDIR)$(systemdsystemdir)
 	ln -s tcmmd.service $(DESTDIR)$(systemdsystemdir)/dbus-org.tcmmd.service
 
-EXTRA_DIST = $(systembus_DATA) $(systembusactivation_DATA) $(modulesd_DATA)
+EXTRA_DIST = $(systembus_DATA) $(systembusactivation_DATA) $(modulesd_DATA) $(systemdsystem_DATA)
