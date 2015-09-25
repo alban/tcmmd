@@ -1,5 +1,5 @@
 AC_PREREQ([2.69])
-AC_INIT(tcmmd, 0.1.11, alban.crequy@collabora.co.uk)
+AC_INIT(tcmmd, 0.1.12, alban.crequy@collabora.co.uk)
 AM_INIT_AUTOMAKE([1.9 -Wno-portability foreign no-dist-gzip dist-xz tar-ustar])
 
 AC_CONFIG_SRCDIR([src/tcmmd_rtnl.c])
