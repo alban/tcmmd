@@ -10,7 +10,7 @@ modulesd_DATA = tcmmd.conf
 systemdsystemdir = $(prefix)/lib/systemd/system
 systemdsystem_DATA = tcmmd.service
 
-install-data-local:
+install-data-local: tcmmd.service
 	install -d $(DESTDIR)$(systemdsystemdir)
 	ln -s tcmmd.service $(DESTDIR)$(systemdsystemdir)/dbus-org.tcmmd.service
 
