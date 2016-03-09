@@ -315,7 +315,7 @@ main (gint argc,
     gchar *argv[])
 {
   DemoData self = { NULL, };
-  ClutterColor stage_color = { 0x00, 0x00, 0x00, 0x00 };
+  ClutterColor stage_color = { 0x00, 0x00, 0x00, 0xff };
   ClutterActor *stage;
   ClutterActor *vactor;
   ClutterGstPlayback *player;
