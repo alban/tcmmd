@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # limit egress bandwidth with source tcp port 80
 

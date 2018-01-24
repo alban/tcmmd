@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 ./tcmmd-log-parsing.py -i ${1} -o /tmp/tmp.$$
 echo "set terminal png size 2048,768
