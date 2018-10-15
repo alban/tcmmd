@@ -69,6 +69,8 @@ link_cb (struct nl_object *obj, void *data)
   /* We want to find a real hardware interface, not ifb0 */
   if (g_str_has_prefix (rtnl_link_get_name (link), "ifb"))
     return;
+  if (rtnl_link_is_bridge(link))
+    return;
 
   if (main_link)
     {
